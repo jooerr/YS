@@ -11,6 +11,7 @@ body {
     text-align: center;
 }
 
+/* الكونتينر */
 .container {
     position: relative;
     z-index: 2;
@@ -19,14 +20,50 @@ body {
     padding: 20px;
 }
 
+/* العنوان */
 h1 {
-    margin-bottom: 15px;
+    margin: 15px 0;
 }
 
+/* الزرار */
+#startBtn {
+    padding: 14px 30px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ffffff, #bbbbbb);
+    color: black;
+    margin-bottom: 20px;
+
+    box-shadow: 0 0 10px rgba(255,255,255,0.4);
+    animation: pulse 1.5s infinite;
+    transition: 0.3s;
+}
+
+#startBtn:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 25px rgba(255,255,255,0.9);
+}
+
+@keyframes pulse {
+    0% { box-shadow: 0 0 10px rgba(255,255,255,0.4); }
+    50% { box-shadow: 0 0 25px rgba(255,255,255,0.9); }
+    100% { box-shadow: 0 0 10px rgba(255,255,255,0.4); }
+}
+
+/* الرسالة */
+#message {
+    font-size: 1.2em;
+    min-height: 150px;
+    margin-bottom: 15px;
+    line-height: 1.6;
+}
+
+/* الصورة */
 .image {
     width: 70%;
     border-radius: 15px;
-    margin: 20px auto;
     opacity: 0;
     transform: scale(0.8);
     transition: 0.6s;
@@ -37,27 +74,7 @@ h1 {
     transform: scale(1);
 }
 
-button {
-    padding: 12px 25px;
-    font-size: 1em;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    background: white;
-    color: black;
-    transition: 0.3s;
-    margin-top: 15px;
-}
-
-button:hover {
-    background: #ccc;
-}
-
-#message {
-    font-size: 1.2em;
-    min-height: 150px;
-}
-
+/* القلوب */
 .hearts-container {
     position: fixed;
     width: 100%;
@@ -83,5 +100,16 @@ button:hover {
     100% {
         transform: translateY(-800px);
         opacity: 0;
+    }
+}
+
+/* موبايل */
+@media (max-width:600px){
+    #message {
+        font-size: 1em;
+    }
+
+    .image {
+        width: 90%;
     }
 }
